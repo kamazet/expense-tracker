@@ -1,0 +1,16 @@
+{
+    "name": "expense-tracker",
+    "private": true,
+    "scripts": {
+        "install-client": "cd client && npm install",
+        "install-server": "cd server && npm install",
+        "build": "cd client && npm run build",
+        "start": "cd server && npm run start"
+    },
+    "dependencies": {
+        "axios": "^1.9.0",
+        "formidable-serverless": "^1.1.1",
+        "pdf-parse": "^1.1.1",
+        "xlsx": "^0.18.5"
+    }
+}
