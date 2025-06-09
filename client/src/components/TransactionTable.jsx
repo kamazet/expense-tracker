@@ -65,10 +65,18 @@ function TransactionTable({ transactions, setTransactions }) {
                   onChange={(e) => handleInputChange(idx, 'Subcategory', e.target.value)}
                 >
                   <option value=""></option>
-                  {txn.Category &&
-                    categories[txn.Category].map((subcat) => (
-                      <option key={subcat} value={subcat}>{subcat}</option>
-                    ))}
+                  {txn.Category 
+                    ? categories[txn.Category].map((subcat) => (
+                        <option key={subcat} value={subcat}>{subcat}</option>
+                      ))
+                    : Object.entries(categories).flatMap(([category, subcategories]) =>
+                        subcategories.map(subcat => (
+                          <option key={`${category}-${subcat}`} value={subcat}>
+                            {subcat} ({category})
+                          </option>
+                        ))
+                      )
+                  }
                 </select>
               </td>
               <td>
@@ -76,7 +84,7 @@ function TransactionTable({ transactions, setTransactions }) {
                   type="number"
                   value={txn.Amount || ''}
                   onChange={(e) => handleInputChange(idx, 'Amount', e.target.value)}
-                  style={{ width: '80px', textAlign: 'right' }}
+                  className={`${txn.Amount > 0 ? 'amount-positive' : txn.Amount < 0 ? 'amount-negative' : ''}`}
                 />
               </td>
               <td>
