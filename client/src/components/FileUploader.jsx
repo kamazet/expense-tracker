@@ -42,7 +42,7 @@ function FileUploader({ onUploadSuccess }) {
       });
   
       if (response.data.success) {
-        setUploadStatus('PDF processed successfully!');
+        setUploadStatus(`Successfully processed ${response.data.transaction_data.length} transactions`);
         onUploadSuccess(response.data.transaction_data);
       } else {
         setUploadStatus('Error processing PDF');

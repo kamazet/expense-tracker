@@ -33,7 +33,7 @@ function TransactionTable({ transactions, setTransactions }) {
       <table className="transaction-table">
         <thead>
           <tr>
-            <th>Action</th>
+            <th></th>
             <th>Date</th>
             <th>Category</th>
             <th>Subcategory</th>
@@ -53,7 +53,7 @@ function TransactionTable({ transactions, setTransactions }) {
                   value={txn.Category || ''}
                   onChange={(e) => handleInputChange(idx, 'Category', e.target.value)}
                 >
-                  <option value="">Select Category</option>
+                  <option value=""></option>
                   {Object.keys(categories).map((cat) => (
                     <option key={cat} value={cat}>{cat}</option>
                   ))}
@@ -64,7 +64,7 @@ function TransactionTable({ transactions, setTransactions }) {
                   value={txn.Subcategory || ''}
                   onChange={(e) => handleInputChange(idx, 'Subcategory', e.target.value)}
                 >
-                  <option value="">Select Subcategory</option>
+                  <option value=""></option>
                   {txn.Category &&
                     categories[txn.Category].map((subcat) => (
                       <option key={subcat} value={subcat}>{subcat}</option>

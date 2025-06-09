@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +14,12 @@
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "fs-extra": "^11.3.0",
+    "moment": "^2.30.1",
     "multer": "^2.0.1",
     "pdf-parse": "^1.1.1",
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
